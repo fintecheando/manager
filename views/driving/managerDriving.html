@@ -1,0 +1,120 @@
+
+
+<!------
+    Template quản lý
+------->
+
+<div class="title-content-post">
+    <ol class="breadcrumb pull-left">
+        <li><a href="#">{{getApp.name}}</a></li>
+        <li><a href="#">Administrador de controladores</a></li>
+        <li><a href="#">Lista de unidad</a></li>
+        <li class="active"><a href="#">Lista de unidad</a></li>
+        <li class="active">Información del Conductor</li>
+    </ol>
+    <div class="pull-right" ng-show="activeForm == 1">
+        <button type="button" class="btn btn-default" ng-click="back()"><i
+                class="glyphicon glyphicon-chevron-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+<div class="content-post" ng-show="activeForm == 0">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sort-search">
+                        <select ng-model="selectSearch" ng-change="select(selectSearch)" class="form-control">
+                            <option>Búsqueda por nombre</option>
+                            <option>Busque por numero de asientos</option>
+                            <option>Búsqueda por vehículo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3" ng-show="checkCarType">
+                    <div class="sort-search">
+                        <select ng-change="selectCar(myCheckCar)" class="form-control" ng-model="myCheckCar"
+                                ng-options="list.carMarker for list in listDriverTypes">
+                            <option value="">Todos los vehículos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3" ng-show="checkCarTypeSeat">
+                    <div class="sort-search">
+                        <select ng-model="selectSearchSeatNum" ng-change="selectSeat(selectSearchSeatNum)"
+                                class="form-control">
+                            <option selected>Todos</option>
+                            <option>4 Asientos</option>
+                            <option>7 Asientos</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group input-search">
+                        <i class="fa fa-search"></i>
+                        <input type="text" class="form-control" placeholder="Búsqueda" ng-model="search">
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="add-new-item">
+                <button type="button" class="btn btn-primary pull-right" ng-click="activeForm = 1">
+                  <i class="glyphicon glyphicon-plus"></i> Añadir 
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-post">
+                    <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre completo</th>
+                        <th>Evaluar</th>
+                        <th>Teléfono</th>
+                        <th>Modelos</th>
+                        <th>Asientos</th>
+                        <th>Funciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in listDriving | filter:search">
+                        <!--
+                        <td ng-click="gotoPage('main.detailDriving',{id : data._id})" class="text-center"><img src="http://eng.sut.ac.th/ae/engsut/sites/default/files/imagefield_default_images/default_user_avatar_thumb.png" alt="" style="height: 30px"/></td>
+                        -->
+                        <td ng-click="gotoPage('main.detailDriving',{id : data._id})" class="text-center">
+                            <div class="img-avatar">
+                                <img src="{{ checkAvatar(data.avatar) }}" alt="" class="img-responsive"/>
+                            </div>
+                        </td>
+                        <td ng-click="gotoPage('main.detailDriving',{id : data._id})">{{data.fullname}}</td>
+                        <td ng-click="gotoPage('main.detailDriving',{id : data._id})">{{data.like}}</td>
+                        <td ng-click="gotoPage('main.detailDriving',{id : data._id})">{{data.phone}}</td>
+                        <td ng-click="gotoPage('main.detailDriving',{id : data._id})">{{data.type.carMarker}}</td>
+                        <td ng-click="gotoPage('main.detailDriving',{id : data._id})"> {{data.type.seatNum}}</td>
+                        <td><a ng-click="deleteDriving(data,$index)"> Borrar </a> | <a
+                                ng-click="gotoPage('main.detailDriving',{id : data._id})"> Reparación </a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="activeForm == 1">
+    <div class="col-xs-12">
+        <div ng-include="'views/driving/form-driving.html'"></div>
+    </div>
+</div>

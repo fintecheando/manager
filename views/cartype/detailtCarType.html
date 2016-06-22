@@ -1,0 +1,91 @@
+<div class="content-post">
+
+
+<div class="col-xs-5">
+    <table class="table table-detail-cartype">
+        <thead>
+        <tr>
+            <th style="width : 150px;">Información</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><b>Modelo de Vehículo : </b></td>
+            <td><input ng-model="data.carMarker" type="text" class="form-control"
+                       value="{{data.carMarker}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Color</b></td>
+            <td><input ng-model="data.color" type="text" class="form-control"
+                       value="{{data.color}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Asientos</b></td>
+            <td><input ng-model="data.seatNum" type="text" class="form-control"
+                       value="{{data.seatNum}}"/></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="col-xs-7 detail-hr">
+    <table class="table">
+        <thead>
+        <tr>
+            <th style="width : 150px;">Bảng giá</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><b>Los primeros kilómetros: desde 0 kilometros a </b></td>
+            <td><input ng-model="data.firstKm" type="text" class="form-control"
+                       value="{{data.firstKm}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Precio de los primeros Km :</b></td>
+            <td><input ng-model="data.firstPrice" type="text" class="form-control"
+                       value="{{data.firstPrice}}"/></td>
+        </tr>
+
+        <tr>
+            <td><b>Precio a partir del {{data.firstKm}}Km  : </b></td>
+            <td><input ng-model="data.middleKm" type="text" class="form-control"
+                       value="{{data.middleKm}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Precio del segundo Km: </b></td>
+            <td><input ng-model="data.middlePrice" type="text" class="form-control"
+                       value="{{data.middlePrice}}"/></td>
+        </tr>
+        <tr>
+            <td><b>Precio del ultimo Km</b></td>
+            <td> {{data.middleKm}}</td>
+        </tr>
+        <tr>
+            <td><b>Precio final</b></td>
+            <td><input ng-model="data.lastPrice" type="text" class="form-control"
+                       value="{{data.lastPrice}}"/></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+<div class="col-xs-12" class="text-center">
+    <div class="pull-left">
+        <button ng-click="update(data)" type="button" class="btn btn-success"><i
+                class="glyphicon glyphicon-edit"></i> Actualizar
+        </button>
+        <button type="button" class="btn btn-primary" ng-click="gotoPage('main.managerCarType')"><i
+                class="glyphicon glyphicon-lock"></i> Cancelar
+        </button>
+    </div>
+</div>
+<style>
+    .detail-hr tr td {
+        width: 180px !important;
+    }
+</style>
+</div>
