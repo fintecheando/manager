@@ -136,7 +136,7 @@ angular.module('itaxiManagerApp')
 
                 itemData.save(function (err, resp) {
                     if (!err) {
-                        toastr.success('Thêm mới thành công!');
+                        toastr.success('¡Se agrego exitosamente!');
                         $scope.listDriving.unshift(itemData);
                         appDataStore.Drivings.add(itemData);
                         $scope.activeForm = 0;
@@ -154,7 +154,7 @@ angular.module('itaxiManagerApp')
                     destroyItem.isDestroy = true;
                     destroyItem.save(function (err, result) {
                         if (!err) {
-                            toastr.success('Xóa lái xe thành công!');
+                            toastr.success('¡Se elimino exitosamente!');
                             $scope.listDriving.splice(index, 1);
                             appDataStore.Drivings.remove(item);
                         } else {

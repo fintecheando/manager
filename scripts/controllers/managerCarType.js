@@ -60,7 +60,7 @@ angular.module('itaxiManagerApp')
 
             itemData.save(function (err, resp) {
                 if (!err) {
-                    toastr.success('Thêm mới thành công!');
+                    toastr.success('¡Se agrego exitosamente!');
                     $scope.listDriverTypes.push(itemData);
                     appDataStore.DriverTypes.add(itemData);
                     $scope.back();
@@ -75,7 +75,7 @@ angular.module('itaxiManagerApp')
             if (window.confirm('Bạn có muốn xóa tài xế : ' + item.username + ' hay không?')) {
                 item.destroy(function (err, result) {
                     if (!err) {
-                        toastr.success('Xóa lái xe thành công!');
+                        toastr.success('¡Se elimino exitosamente!');
                         $scope.DriverTypes.splice(index, 1);
                         appDataStore.DriverTypes.remove(item);
                     } else {
