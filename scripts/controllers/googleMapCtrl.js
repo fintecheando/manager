@@ -120,7 +120,7 @@ angular.module('itaxiManagerApp')
 
             function initialize() {
                 var mapOptions = {
-                    zoom: 13,
+                    zoom: 15,
                     center: new google.maps.LatLng(19.4314214, -99.0876831)
                 };
 
