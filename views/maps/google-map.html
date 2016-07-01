@@ -2,6 +2,8 @@
     Template Map-taxi
 ------->
 
+    
+    
 <div class="google-map">
 
     <!------
@@ -9,9 +11,9 @@
     ------->
     <div class="title-state list-taxi">
         <ul class="nav nav-pills">
-            <li><a>Número total de vehículos en el mapa  : {{Object.keys(listTaxi).length}}</a></li>
-            <li><a>Número de coches circulando : {{Object.keys(listTaxiRuning).length}}</a></li>
-            <li><a>Número de coches de espera : {{Object.keys(listTaxiWaiting).length}}</a></li>
+            <li><a>Número total de vehículos en el mapa  : {{ Utils.keys(listTaxi).length }} </a></li>
+            <li><a>Número de coches circulando : {{ Utils.keys(listTaxiRuning).length }} </a></li>
+            <li><a>Número de coches de espera : {{ Utils.keys(listTaxiWaiting).length }} </a></li>
             <li class="pull-right"> <input type="text" placeholder="Búsqueda" />
             </li>
         </ul>

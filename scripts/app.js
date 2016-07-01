@@ -35,8 +35,11 @@ angular
 //
 //        $translateProvider.preferredLanguage('en');
 
+                
 
         $urlRouterProvider.otherwise("/main");
+        
+        
 
         $stateProvider
             .state('main', {
@@ -142,7 +145,7 @@ angular
 
         var interceptor = ['$rootScope', '$q', '$location', '$logger', function ($rootScope, $q, $location, $logger) {
 
-
+        
             var success = function (response) {
                 return response;
             };
@@ -183,6 +186,10 @@ angular
             $rootScope.getApp = {
                 name: "HubTaxi"
             };
+            
+            $rootScope.Utils = {
+                keys : Object.keys
+             };
 
 
             $rootScope.onFileSelect = function ($files, driving) {
@@ -192,7 +199,7 @@ angular
                 for (var i = 0; i < $files.length; i++) {
                     var file = $files[i];
                     $rootScope.upload = $upload.upload({
-                        url: 'http://vsoft.vn:1235/upload', // upload.php script, node.js route, or servlet url
+                        url: 'http://txmx.bitnamiapp.com:6868/upload', // upload.php script, node.js route, or servlet url
                         method: 'POST', // or 'PUT',
 
                         data: {myObj: $rootScope.myModelObj},

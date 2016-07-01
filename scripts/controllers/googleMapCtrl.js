@@ -15,6 +15,8 @@ angular.module('itaxiManagerApp')
                 loadTaxiInfo;
             $scope.taxiInfo = {};
             $scope.Object = Object;
+            
+            
 
             /*
              * List Taxi Status :
@@ -24,7 +26,9 @@ angular.module('itaxiManagerApp')
              * */
 
             $scope.listTaxi = {};
+            
             $scope.listTaxiRuning = {};
+            
             $scope.listTaxiWaiting = {};
 
 
@@ -39,7 +43,7 @@ angular.module('itaxiManagerApp')
 
                 var mk = new google.maps.Marker({
                     position: new google.maps.LatLng(marker.lat, marker.lng),
-                    title: "Hello World!",
+                    title: "Taxi TXMX",
                     carLic: marker.carLic,
                     icon: icon
                 });
