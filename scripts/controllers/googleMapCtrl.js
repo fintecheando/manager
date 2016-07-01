@@ -99,7 +99,7 @@ angular.module('itaxiManagerApp')
                     if (resp.success) {
                         async.forEach(Object.keys(resp.data), function (key, next) {
                             listPositionTaxi.push(new google.maps.LatLng(resp.data[key].lat, resp.data[key].lng));
-                            $scope.listTaxi[key] = resp.data[key];
+                            $scope.listTaxi[key] = resp.data[key];                            
                             createMarker(resp.data[key]);
                             if (resp.data[key].status == 0) {
                                 $scope.listTaxiWaiting[key] = resp.data[key];
@@ -124,7 +124,7 @@ angular.module('itaxiManagerApp')
 
             function initialize() {
                 var mapOptions = {
-                    zoom: 15,
+                    zoom: 11,
                     center: new google.maps.LatLng(19.4314214, -99.0876831)
                 };
 
