@@ -18,8 +18,8 @@ angular.module('itaxiManagerApp')
 
             /*
              * List Taxi Status :
-             * 0 : Normal - Đang đợi khách
-             * 1 : Busy (hanshaking with taxi or runing) : Đang đón hoặc đang chạy
+             * 0 : Normal - A la espera de los clientes
+             * 1 : Busy (hanshaking with taxi or runing) : Ocupados o en movimiento
              * 2 : Die (disconect or ....) : Disconnect or visible
              * */
 
